@@ -65,5 +65,5 @@ class Minuteur(Sujet):
             "etat": self._etat,
             "en_pause": self._en_pause,
             "sessions_completees": self._sessions_completees,
-            "duree_totale": DUREE_TRAVAIL + DUREE_PAUSE
+            "duree_totale": DUREE_TRAVAIL if self._etat == "Travail" else DUREE_PAUSE
         }

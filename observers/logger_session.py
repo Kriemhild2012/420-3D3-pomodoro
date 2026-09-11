@@ -17,7 +17,7 @@ class LoggerSession(Observateur):
         sessions_completees = sujet.get_donnees()["sessions_completees"]
         if sessions_completees > self._derniere_session:
             with open(self._chemin, "a") as f:
-                f.write(f"Session complétée à {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+                f.write(f"Session {sessions_completees} completee a {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
             self._derniere_session = sessions_completees
         else:
             return  # Ne rien faire si aucune nouvelle session n'est complétée

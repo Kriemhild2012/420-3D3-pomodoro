@@ -25,9 +25,10 @@ class Minuteur(Sujet):
             return
         elif self._temps_restant > 0:
             self._temps_restant -= 1
+            self.notifier()
         else:
             self._changer_etat()
-        self.notifier()
+            self.notifier()
 
     def _changer_etat(self) -> None:
         """Bascule entre travail et pause."""
@@ -37,7 +38,6 @@ class Minuteur(Sujet):
         if self._etat == "Travail":
             self._sessions_completees += 1
             self._etat = "Pause"
-            self.basculer_pause()
             self._temps_restant = DUREE_PAUSE
         else:
             self._etat = "Travail"

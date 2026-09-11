@@ -37,6 +37,7 @@ class Minuteur(Sujet):
         if self._etat == "Travail":
             self._sessions_completees += 1
             self._etat = "Pause"
+            self.basculer_pause()
             self._temps_restant = DUREE_PAUSE
         else:
             self._etat = "Travail"

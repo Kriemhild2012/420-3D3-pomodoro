@@ -16,5 +16,5 @@ class CompteurSessions(Observateur):
         # À compléter :
         # Récupérez sessions_completees depuis sujet.get_donnees()
         # Mettez à jour le label
-        sessions_completees = self.get_donnees()["sessions_completees"]
+        sessions_completees = sujet.get_donnees()["sessions_completees"]
         self._label.config(text=f"Sessions complétées : {sessions_completees}")
